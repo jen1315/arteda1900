@@ -35,7 +35,7 @@
 </head>
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="index.html">
+	<a class="navbar-brand" href="">
 		<img src="./img/Word-Art.png" alt="Logo" style="width: 50px;">
 		Arte nel '900
 	</a>
@@ -45,7 +45,7 @@
 	<div class="collapse navbar-collapse text-center" id="navbarNav">
     <ul class="navbar-nav">
 		<li class= "nav-item">
-			<a class="nav-link" href=".index.html">Home</a>
+			<a class="nav-link" href="index.html">Home</a>
 		</li>
 		<li class= "nav-item dropdown center">
 			<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Periodo</a>
@@ -60,7 +60,7 @@
 			<a class="nav-link" href="./php/news.php">News</a>
 		</li>
 		<li class= "nav-item">
-			<a class="nav-link" href="crediti.html">About Us</a>
+			<a class="nav-link" href="crediti.html">Chi siamo</a>
 		</li>
 		<form class="form-inline my-2 my-lg-0 center" action="./php/cerca.php" method="get">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca">
@@ -69,25 +69,6 @@
     </ul>
 	</div>
 	</nav>
-	<div class="row" style="margin-top: 50px;">
-		<article class="col">
-		<h3><b>Categorie</b></h3>
-		<a href="#">Astrattismo</a>
-		</article>
-		<article class="col-6">
-<?php
-		//riepilogo news
-		session_start();
-		
-		if(!empty($_SESSION["news"])) {
-			foreach($_SESSION as $key => $value) {
-			}
-		} else {
-			echo "Nessuna Notizia.";
-		}
-?>
-		</article>
-	</div>
 	<div class="modal" id="passModal" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -97,15 +78,64 @@
 			</button>
 		  </div>
 		  <div class="modal-body">
+		  <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
 			<p>Enter Password:</p>
-			<input id="pass" type="password"/>
+			<input type="password" name="pass">
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-danger" onclick="done()">Done</button>
+			<input type="submit" class="btn btn-danger" value="Done">
+		  </form>
 		  </div>
 		</div>
 	  </div>
+	</div>
+	<div class="row justify-content-md-center" style="margin-top: 70px;">
+		<article class="col col-lg-2">
+		<h3><b>Categorie</b></h3>
+		<a href="#">Astrattismo</a>
+		</article>
+		<article class="col-6">
+		<a href="#" data-toggle="modal" data-target="#passModal">Posta</a><br />
+<?php
+		//accesso con password per postare
+		if(isset($_POST["pass"]))
+			if($_POST["pass"] == "1234"){
+?>
+              <article class="red">
+				<form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
+				    Titolo<br />
+					<input class="form-control"" type="text" name="titolo"><br />
+					<div class="form-group">
+						<label for="exampleFormControlTextarea1">Testo</label>
+						<textarea class="form-control" rows="3" name="testo"></textarea>
+					</div>
+					<input type="submit" value="Posta">
+				</form>
+			  </article>
+<?php
+			}else
+				echo "<b>Accesso non consentito. Password errata.</b><br />";
+		//raccolta form
+		session_start();
+		
+		if(!empty($_POST["titolo"])) {
+			$_SESSION["news"][$_POST["titolo"]] = "[". date('d/m/y',time()). "]: ". $_POST["testo"];
+		}//if
+		
+		//riepilogo news
+		if(!empty($_SESSION["news"])) {
+			foreach($_SESSION["news"] as $key => $value) {
+                echo "<article class='red'>
+			          <h3>". $key. "</h3><hr />
+					  <p>". $value. "</p>
+			          </article>";
+			}
+		} else {
+			echo "Nessuna Notizia.";
+		}
+?>
+		</article>
 	</div>
   <footer class="footer-copyright py-3 red">
     <div class="row">
@@ -113,21 +143,12 @@
 		<div class="col-6">
 			<h3>Links</h3><hr />
 			<a href="">Mappa del sito</a><br />
-			<a href="#">Contact Us</a><br />
-			<a href="#" data-toggle="modal" data-target="#passModal">Sezione privata</a>
+			<a href="#">Contattateci</a><br />
+			<a href="crediti.html">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>
 	</div>
   </footer>
-  <script>
-		function done() { 
-			var password = document.getElementById("pass").value;
-			if(password == "1234")
-			    window.open('post.html');
-			else
-			    alert("Password errata.");
-		};
-  </script>
   <!-- jQuery library -->
   <script src="./bootstrap/jquery-3.3.1.js"></script>
   <!-- Latest compiled JavaScript -->
