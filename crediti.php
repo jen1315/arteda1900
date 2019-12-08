@@ -63,7 +63,7 @@
 			<a class="nav-link" href="crediti.html">Chi siamo</a>
 		</li>
 		<form class="form-inline my-2 my-lg-0 center" action="cerca.php" method="get">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca" required>
             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
         </form>
     </ul>
@@ -82,7 +82,7 @@
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-		    <h5 class="modal-title">Manda e-mail</h5>
+		    <h5 class="modal-title">Contattacil</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
@@ -122,8 +122,8 @@
 		<div class="col-6">
 			<h3>Links</h3><hr />
 			<a href="">Mappa del sito</a><br />
-			<a href="#">Contattateci</a><br />
-			<a href="crediti.html">Chi siamo</a>
+			<a href="#" data-toggle="modal" data-target="#contactModal">Contattaci</a><br />
+			<a href="crediti.php">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>
 	</div>
