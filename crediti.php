@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" href="./img/bplogo.png" type="image/png">
-	<title>News</title>
+	<title>Arte dal '900</title>
 	<style>
 		.navbar-nav li{
 			padding-left:30px;
@@ -60,7 +60,7 @@
 			<a class="nav-link" href="news.php">News</a>
 		</li>
 		<li class= "nav-item">
-			<a class="nav-link" href="crediti.php">Chi siamo</a>
+			<a class="nav-link" href="crediti.html">Chi siamo</a>
 		</li>
 		<form class="form-inline my-2 my-lg-0 center" action="cerca.php" method="get">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca">
@@ -69,72 +69,13 @@
     </ul>
 	</div>
 	</nav>
-	<div class="modal" id="passModal" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		  </div>
-		  <div class="modal-body">
-		  <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-			<p>Enter Password:</p>
-			<input type="password" name="pass">
-		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<input type="submit" class="btn btn-danger" value="Done">
-		  </form>
-		  </div>
-		</div>
-	  </div>
-	</div>
 	<div class="row justify-content-md-center" style="margin-top: 70px;">
 		<article class="col col-lg-2">
 		<h3><b>Categorie</b></h3>
 		<a href="#">Astrattismo</a>
 		</article>
 		<article class="col-6">
-		<a href="#" data-toggle="modal" data-target="#passModal">Posta</a><br />
-<?php
-		//accesso con password per postare
-		if(isset($_POST["pass"]))
-			if($_POST["pass"] == "1234"){
-?>
-              <article class="red">
-				<form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-				    Titolo<br />
-					<input class="form-control"" type="text" name="titolo"><br />
-					<div class="form-group">
-						<label for="exampleFormControlTextarea1">Testo</label>
-						<textarea class="form-control" rows="3" name="testo"></textarea>
-					</div>
-					<input class="btn btn-outline-light" type="submit" value="Posta">
-				</form>
-			  </article>
-<?php
-			}else
-				echo "<b>Accesso non consentito. Password errata.</b><br />";
-		//raccolta form
-		session_start();
-		
-		if(!empty($_POST["titolo"])) {
-			$_SESSION["news"][$_POST["titolo"]] = "[". date('d/m/y',time()). "]: ". $_POST["testo"];
-		}//if
-		
-		//riepilogo news
-		if(!empty($_SESSION["news"])) {
-			foreach($_SESSION["news"] as $key => $value) {
-                echo "<article class='red'>
-			          <h3>". $key. "</h3><hr />
-					  <p>". $value. "</p>
-			          </article>";
-			}
-		} else {
-			echo "Nessuna Notizia.";
-		}
-?>
+		esempio
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">
@@ -181,7 +122,7 @@
 		<div class="col-6">
 			<h3>Links</h3><hr />
 			<a href="">Mappa del sito</a><br />
-			<a href="#" data-toggle="modal" data-target="#contactModal">Contattateci</a><br />
+			<a href="#">Contattateci</a><br />
 			<a href="crediti.html">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>

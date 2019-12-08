@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="icon" href="./img/bplogo.png" type="image/png">
-	<title>News</title>
+	<title>Arte dal '900</title>
 	<style>
 		.navbar-nav li{
 			padding-left:30px;
@@ -69,72 +69,51 @@
     </ul>
 	</div>
 	</nav>
-	<div class="modal" id="passModal" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
+	<div id="carouselExampleCaptions" class="carousel slide center" data-ride="carousel"  style="width:100%; margin-top: 50px;">
+	  <ol class="carousel-indicators">
+		<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+		<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+		<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+	  </ol>
+	  <div class="carousel-inner" style="height: 500px !important;">
+		<div class="carousel-item active">
+		  <img src="./img/moderna.jpg" class="d-block w-100" alt="img1">
+		  <div class="carousel-caption d-none d-md-block">
+			<h5>Arte Moderna</h5>
+			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
 		  </div>
-		  <div class="modal-body">
-		  <form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-			<p>Enter Password:</p>
-			<input type="password" name="pass">
+		</div>
+		<div class="carousel-item">
+		  <img src="./img/futurismo.jpg" class="d-block w-100" alt="img2">
+		  <div class="carousel-caption d-none d-md-block">
+			<h5>Futurismo</h5>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		  </div>
-		  <div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			<input type="submit" class="btn btn-danger" value="Done">
-		  </form>
+		</div>
+		<div class="carousel-item">
+		  <img src="./img/kandisky.jpg" class="d-block w-100" alt="img3">
+		  <div class="carousel-caption d-none d-md-block">
+			<h5>Third slide label</h5>
+			<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
 		  </div>
 		</div>
 	  </div>
+	  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	  </a>
 	</div>
-	<div class="row justify-content-md-center" style="margin-top: 70px;">
+	<div class="row justify-content-md-center">
 		<article class="col col-lg-2">
 		<h3><b>Categorie</b></h3>
 		<a href="#">Astrattismo</a>
 		</article>
 		<article class="col-6">
-		<a href="#" data-toggle="modal" data-target="#passModal">Posta</a><br />
-<?php
-		//accesso con password per postare
-		if(isset($_POST["pass"]))
-			if($_POST["pass"] == "1234"){
-?>
-              <article class="red">
-				<form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
-				    Titolo<br />
-					<input class="form-control"" type="text" name="titolo"><br />
-					<div class="form-group">
-						<label for="exampleFormControlTextarea1">Testo</label>
-						<textarea class="form-control" rows="3" name="testo"></textarea>
-					</div>
-					<input class="btn btn-outline-light" type="submit" value="Posta">
-				</form>
-			  </article>
-<?php
-			}else
-				echo "<b>Accesso non consentito. Password errata.</b><br />";
-		//raccolta form
-		session_start();
-		
-		if(!empty($_POST["titolo"])) {
-			$_SESSION["news"][$_POST["titolo"]] = "[". date('d/m/y',time()). "]: ". $_POST["testo"];
-		}//if
-		
-		//riepilogo news
-		if(!empty($_SESSION["news"])) {
-			foreach($_SESSION["news"] as $key => $value) {
-                echo "<article class='red'>
-			          <h3>". $key. "</h3><hr />
-					  <p>". $value. "</p>
-			          </article>";
-			}
-		} else {
-			echo "Nessuna Notizia.";
-		}
-?>
+		esempio
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">
@@ -180,7 +159,7 @@
 		<div class="col text-center"><img src="./img/Word-Art.png" alt="wordart" style="width: 200px;"></div>
 		<div class="col-6">
 			<h3>Links</h3><hr />
-			<a href="">Mappa del sito</a><br />
+			<a href="mappa.html">Mappa del sito</a><br />
 			<a href="#" data-toggle="modal" data-target="#contactModal">Contattateci</a><br />
 			<a href="crediti.html">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
