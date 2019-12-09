@@ -26,6 +26,11 @@
 			background-color: rgb(143, 26, 26);
 			color: white;
 		}
+		ul{padding:0; margin:0; list-style:none}
+		.media-left{width:100px; height:80px}
+		.media-left > img{height:70px; width:90px}
+		.latest_postnav{height:auto !important; margin-top:20px}
+        .latest_postnav li{margin-bottom:10px; float:left; width:100%}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -109,11 +114,32 @@
 	</div>
 	<div class="row justify-content-md-center">
 		<article class="col col-lg-2">
-		<h3><b>Categorie</b></h3>
-		<a href="#">Astrattismo</a>
+			<h3><b>Categorie</b></h3>
+			Inizio '900 - Ia Guerra Mondiale<br />
+			<a href="#">Espressionismo</a><br />
+			<a href="#">Cubismo</a><br />
+			<a href="#">Futurismo</a><br />
+			<a href="#">Astrattismo</a><br />
+			<a href="#">Dadaismo</a><br />
+			<a href="#">Surrealismo</a><br />
+			Fine Ia Guerra - IIa Guerra Mondiale<br />
+			<a href="#">Il Noveau Realisme Europeo</a><br />
+			<a href="#">La pop art</a><br />
+			<a href="#">Il minimalismo</a><br />
+			<a href="#">Arte Concettuale</a><br />
 		</article>
 		<article class="col-6">
-		esempio
+          <h2>Latest news</h2>
+            <ul class="latest_postnav">
+<?php
+              
+			  echo "<li>
+                <div class='media'> <a href='#' class='media-left'> <img alt='' src='./img/Word-Art.png'> </a>
+                  <div class='media-bodyì> <a href='#'> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                </div>
+              </li>";
+?>
+            </ul>
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">

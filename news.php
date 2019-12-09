@@ -92,8 +92,19 @@
 	</div>
 	<div class="row justify-content-md-center" style="margin-top: 70px;">
 		<article class="col col-lg-2">
-		<h3><b>Categorie</b></h3>
-		<a href="#">Astrattismo</a>
+			<h3><b>Categorie</b></h3>
+			Inizio '900 - Ia Guerra Mondiale<br />
+			<a href="#">Espressionismo</a><br />
+			<a href="#">Cubismo</a><br />
+			<a href="#">Futurismo</a><br />
+			<a href="#">Astrattismo</a><br />
+			<a href="#">Dadaismo</a><br />
+			<a href="#">Surrealismo</a><br />
+			Fine Ia Guerra - IIa Guerra Mondiale<br />
+			<a href="#">Il Noveau Realisme Europeo</a><br />
+			<a href="#">La pop art</a><br />
+			<a href="#">Il minimalismo</a><br />
+			<a href="#">Arte Concettuale</a><br />
 		</article>
 		<article class="col-6">
 		<a href="#" data-toggle="modal" data-target="#passModal">Posta</a><br />
@@ -105,7 +116,7 @@
               <article class="red">
 				<form action="<?php $_SERVER['PHP_SELF'];?>" method="post">
 				    Titolo<br />
-					<input class="form-control"" type="text" name="titolo"><br />
+					<input class="form-control" type="text" name="titolo"><br />
 					<div class="form-group">
 						<label for="exampleFormControlTextarea1">Testo</label>
 						<textarea class="form-control" rows="3" name="testo"></textarea>
@@ -116,10 +127,20 @@
 <?php
 			}else
 				echo "<b>Accesso non consentito. Password errata.</b><br />";
-		//raccolta form
-		session_start();
+		//raccolta form con file di testo
+		$file = fopen("somefile.txt", "a") or die("Unable to open file!");
 		
 		if(!empty($_POST["titolo"])) {
+			$post = $_POST["titolo"]. " | [". date('d/m/y',time()). "]: ". $_POST["testo"]. "\r\n";
+			fwrite($file, $post);
+		}//if
+		
+		//riepilogo news
+		
+		
+		/* //raccolta form con sessione
+		if(!empty($_POST["titolo"])) {
+			session_start();
 			$_SESSION["news"][$_POST["titolo"]] = "[". date('d/m/y',time()). "]: ". $_POST["testo"];
 		}//if
 		
@@ -133,7 +154,7 @@
 			}
 		} else {
 			echo "Nessuna Notizia.";
-		}
+		}*/
 ?>
 		</article>
 	</div>

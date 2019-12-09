@@ -71,8 +71,19 @@
 	</nav>
 	<div class="row justify-content-md-center" style="margin-top: 70px;">
 		<article class="col col-lg-2">
-		<h3><b>Categorie</b></h3>
-		<a href="#">Astrattismo</a>
+			<h3><b>Categorie</b></h3>
+			Inizio '900 - Ia Guerra Mondiale<br />
+			<a href="#">Espressionismo</a><br />
+			<a href="#">Cubismo</a><br />
+			<a href="#">Futurismo</a><br />
+			<a href="#">Astrattismo</a><br />
+			<a href="#">Dadaismo</a><br />
+			<a href="#">Surrealismo</a><br />
+			Fine Ia Guerra - IIa Guerra Mondiale<br />
+			<a href="#">Il Noveau Realisme Europeo</a><br />
+			<a href="#">La pop art</a><br />
+			<a href="#">Il minimalismo</a><br />
+			<a href="#">Arte Concettuale</a><br />
 		</article>
 		<article class="col-6">
 		esempio
