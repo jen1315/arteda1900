@@ -51,14 +51,15 @@
 		<li class= "nav-item dropdown center">
 			<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Periodo</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Inizio '900</a>
-                <a class="dropdown-item" href="#">1a Grande Guerra</a>
-                <a class="dropdown-item" href="#">2a Grande Guerra</a>
-                <a class="dropdown-item" href="#">Contemporaneo</a>
+                <a class="dropdown-item" href="periodo.php">Inizio '900</a>
+                <a class="dropdown-item" href="periodo.php#1G">1a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#2G">2a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#mod">Moderno</a>
+				<a class="dropdown-item" href="periodo.php#now">Contemporaneo</a>
             </div>
 		</li>
 		<li class= "nav-item">
-			<a class="nav-link" href="news.php">News</a>
+			<a class="nav-link" href="news.php">Notizie</a>
 		</li>
 		<li class= "nav-item">
 			<a class="nav-link" href="crediti.php">Chi siamo</a>
@@ -94,7 +95,7 @@
 		<div class="carousel-item">
 		  <img src="./img/kandisky.jpg" class="d-block w-100" alt="img3">
 		  <div class="carousel-caption d-none d-md-block">
-			<h5>Third slide label</h5>
+			<h5>Kandisky</h5>
 			<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
 		  </div>
 		</div>
@@ -123,16 +124,11 @@
 			</div>
 		</article>
 		<article class="col-6">
-          <h2>Latest news</h2>
+          <h2>Ultime notizie</h2>
 <?php
-			//ultime news inserite
-			$out = fopen("somefile.txt", "r") or die("Impossibile aprire file!");
-			$cursor = -1;
-			
-			fseek($out, $cursor, SEEK_END);
-			while(! feof($out)) {
-				echo fgets($out);
-			}//while
+			//ultima notizia inserita
+			$out = file("somefile.txt");
+			echo array_pop($out);
 ?>
             </ul>
 		</article>

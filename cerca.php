@@ -50,14 +50,15 @@
 		<li class= "nav-item dropdown center">
 			<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Periodo</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Inizio '900</a>
-                <a class="dropdown-item" href="#">1a Grande Guerra</a>
-                <a class="dropdown-item" href="#">2a Grande Guerra</a>
-                <a class="dropdown-item" href="#">Contemporaneo</a>
+                <a class="dropdown-item" href="periodo.php">Inizio '900</a>
+                <a class="dropdown-item" href="periodo.php#1G">1a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#2G">2a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#mod">Moderno</a>
+				<a class="dropdown-item" href="periodo.php#now">Contemporaneo</a>
             </div>
 		</li>
 		<li class= "nav-item">
-			<a class="nav-link" href="news.php">News</a>
+			<a class="nav-link" href="news.php">Notizie</a>
 		</li>
 		<li class= "nav-item">
 			<a class="nav-link" href="crediti.php">Chi siamo</a>
