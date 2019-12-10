@@ -120,7 +120,7 @@
 	       if(!empty($_POST["messaggio"])) {
 		       $subject = "data: ". time();
 	           $message = $_POST["messaggio"];
-		       mail($t0, $subject, $message, $headers);
+		       mail($to, $subject, $message, $headers);
 	       }//if
 ?>
 		  </div>

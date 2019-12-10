@@ -132,7 +132,6 @@
           <h2>Latest news</h2>
             <ul class="latest_postnav">
 <?php
-              
 			  echo "<li>
                 <div class='media'> <a href='#' class='media-left'> <img alt='' src='./img/Word-Art.png'> </a>
                   <div class='media-bodyì> <a href='#'> Aliquam malesuada diam eget turpis varius 1</a> </div>
@@ -173,7 +172,7 @@
 	       if(!empty($_POST["messaggio"])) {
 		       $subject = "data: ". time();
 	           $message = $_POST["messaggio"];
-		       mail($t0, $subject, $message, $headers);
+		       mail($to, $subject, $message, $headers);
 	       }//if
 ?>
 		  </div>

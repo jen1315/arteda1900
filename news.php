@@ -18,7 +18,7 @@
 			margin: auto;
 		}
 		article {
-		    margin: 10px;
+		    margin: 5px;
 			padding: 20px;
 			font-size: 18px;
 		}
@@ -128,17 +128,21 @@
 			}else
 				echo "<b>Accesso non consentito. Password errata.</b><br />";
 		//raccolta form con file di testo
-		$file = fopen("somefile.txt", "a") or die("Unable to open file!");
+		$in = fopen("somefile.txt", "a") or die("Impossibile aprire file!");
 		
 		if(!empty($_POST["titolo"])) {
-			$post = $_POST["titolo"]. " | [". date('d/m/y',time()). "]: ". $_POST["testo"]. "\r\n";
-			fwrite($file, $post);
+			$post = "<article class='red'><h4>". $_POST["titolo"]. "</h4>[". date('d/m/y',time()). "]: ". $_POST["testo"]. "</article>\r\n";
+			fwrite($in, $post);
 		}//if
+		fclose($in);
 		
 		//riepilogo news
+		$out = fopen("somefile.txt", "r") or die("Impossibile aprire file!");
+		while(! feof($out)) {
+			echo fgets($out). "<br />";
+		}//while
 		
-		
-		/* //raccolta form con sessione
+		/* //raccolta form con sessione, scartata perché le informazioni salvate non vengono lette facilente dalle altre pagine
 		if(!empty($_POST["titolo"])) {
 			session_start();
 			$_SESSION["news"][$_POST["titolo"]] = "[". date('d/m/y',time()). "]: ". $_POST["testo"];
@@ -151,10 +155,10 @@
 			          <h3>". $key. "</h3><hr />
 					  <p>". $value. "</p>
 			          </article>";
-			}
+			}//foreach
 		} else {
 			echo "Nessuna Notizia.";
-		}*/
+		}//if-else */
 ?>
 		</article>
 	</div>
@@ -189,7 +193,7 @@
 	       if(!empty($_POST["messaggio"])) {
 		       $subject = "data: ". time();
 	           $message = $_POST["messaggio"];
-		       mail($t0, $subject, $message, $headers);
+		       mail($to, $subject, $message, $headers);
 	       }//if
 ?>
 		  </div>
