@@ -27,10 +27,6 @@
 			color: white;
 		}
 		ul{padding:0; margin:0; list-style:none}
-		.media-left{width:100px; height:80px}
-		.media-left > img{height:70px; width:90px}
-		.latest_postnav{height:auto !important; margin-top:20px}
-        .latest_postnav li{margin-bottom:10px; float:left; width:100%}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -82,7 +78,7 @@
 	  </ol>
 	  <div class="carousel-inner" style="height: 500px !important;">
 		<div class="carousel-item active">
-		  <img src="./img/moderna.jpg" class="d-block w-100" alt="img1">
+		  <img src="./img/moderna.jpg" class="d-block w-100" alt="arte moderna">
 		  <div class="carousel-caption d-none d-md-block">
 			<h5>Arte Moderna</h5>
 			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -115,28 +111,28 @@
 	<div class="row justify-content-md-center">
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
-			Inizio '900 - Ia Guerra Mondiale<br />
-			<a href="#">Espressionismo</a><br />
-			<a href="#">Cubismo</a><br />
-			<a href="#">Futurismo</a><br />
-			<a href="#">Astrattismo</a><br />
-			<a href="#">Dadaismo</a><br />
-			<a href="#">Surrealismo</a><br />
-			Fine Ia Guerra - IIa Guerra Mondiale<br />
-			<a href="#">Il Noveau Realisme Europeo</a><br />
-			<a href="#">La pop art</a><br />
-			<a href="#">Il minimalismo</a><br />
-			<a href="#">Arte Concettuale</a><br />
+			<div class="list-group">
+				<a href="#" class="list-group-item list-group-item-action">Espressionismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Cubismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Futurismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Astrattismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Dadaismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Surrealismo</a>
+				<a href="#" class="list-group-item list-group-item-action">La Pop Art</a>
+				<a href="#" class="list-group-item list-group-item-action">Arte Concettuale</a>
+			</div>
 		</article>
 		<article class="col-6">
           <h2>Latest news</h2>
-            <ul class="latest_postnav">
 <?php
-			  echo "<li>
-                <div class='media'> <a href='#' class='media-left'> <img alt='' src='./img/Word-Art.png'> </a>
-                  <div class='media-bodyì> <a href='#'> Aliquam malesuada diam eget turpis varius 1</a> </div>
-                </div>
-              </li>";
+			//ultime news inserite
+			$out = fopen("somefile.txt", "r") or die("Impossibile aprire file!");
+			$cursor = -1;
+			
+			fseek($out, $cursor, SEEK_END);
+			while(! feof($out)) {
+				echo fgets($out);
+			}//while
 ?>
             </ul>
 		</article>
@@ -182,11 +178,11 @@
   <footer class="footer-copyright py-3 red">
     <div class="row">
 		<div class="col text-center"><img src="./img/Word-Art.png" alt="wordart" style="width: 200px;"></div>
-		<div class="col-6">
+		<div class="col-6 linku">
 			<h3>Links</h3><hr />
-			<a href="mappa.html">Mappa del sito</a><br />
-			<a href="#" data-toggle="modal" data-target="#contactModal">Contattaci</a><br />
-			<a href="crediti.php">Chi siamo</a>
+			<a href="mappa.php" style="color: white;">Mappa del sito</a><br />
+			<a href="#" data-toggle="modal" data-target="#contactModal" style="color: white;">Contattaci</a><br />
+			<a href="crediti.php" style="color: white;">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>
 	</div>

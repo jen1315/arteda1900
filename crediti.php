@@ -72,18 +72,16 @@
 	<div class="row justify-content-md-center" style="margin-top: 70px;">
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
-			Inizio '900 - Ia Guerra Mondiale<br />
-			<a href="#">Espressionismo</a><br />
-			<a href="#">Cubismo</a><br />
-			<a href="#">Futurismo</a><br />
-			<a href="#">Astrattismo</a><br />
-			<a href="#">Dadaismo</a><br />
-			<a href="#">Surrealismo</a><br />
-			Fine Ia Guerra - IIa Guerra Mondiale<br />
-			<a href="#">Il Noveau Realisme Europeo</a><br />
-			<a href="#">La pop art</a><br />
-			<a href="#">Il minimalismo</a><br />
-			<a href="#">Arte Concettuale</a><br />
+			<div class="list-group">
+				<a href="#" class="list-group-item list-group-item-action">Espressionismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Cubismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Futurismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Astrattismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Dadaismo</a>
+				<a href="#" class="list-group-item list-group-item-action">Surrealismo</a>
+				<a href="#" class="list-group-item list-group-item-action">La Pop Art</a>
+				<a href="#" class="list-group-item list-group-item-action">Arte Concettuale</a>
+			</div>
 		</article>
 		<article class="col-6">
 		esempio
@@ -132,9 +130,9 @@
 		<div class="col text-center"><img src="./img/Word-Art.png" alt="wordart" style="width: 200px;"></div>
 		<div class="col-6">
 			<h3>Links</h3><hr />
-			<a href="">Mappa del sito</a><br />
-			<a href="#" data-toggle="modal" data-target="#contactModal">Contattaci</a><br />
-			<a href="crediti.php">Chi siamo</a>
+			<a href="mappa.php" style="color: white;">Mappa del sito</a><br />
+			<a href="#" data-toggle="modal" data-target="#contactModal" style="color: white;">Contattaci</a><br />
+			<a href="crediti.php" style="color: white;">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>
 	</div>

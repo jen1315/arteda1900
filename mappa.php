@@ -26,6 +26,7 @@
 			background-color: rgb(143, 26, 26);
 			color: white;
 		}
+		ul{padding:0; margin:0; list-style:none}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -62,8 +63,8 @@
 		<li class= "nav-item">
 			<a class="nav-link" href="crediti.php">Chi siamo</a>
 		</li>
-		<form class="form-inline my-2 my-lg-0 center" action="cerca.php" method="get">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca">
+		<form id="cercF" class="form-inline my-2 my-lg-0 center" action="cerca.php" method="get">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca" required>
             <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
         </form>
     </ul>
@@ -84,29 +85,17 @@
 			</div>
 		</article>
 		<article class="col-6">
-<?php
-        //restituisce i risultati della ricerca
-        $file = 'somefile.txt';
-		$searchfor = $_GET["cerca"];
-		$contents = file_get_contents($file);
-		
-		$pattern = preg_quote($searchfor, '/');
-		$pattern = "/^.*$pattern.*\$/m";
-		if(preg_match_all($pattern, $contents, $matches)){
-		   echo "Found matches:\n";
-		   echo implode("\n", $matches[0]);
-		}//if
-		else{
-		   echo "No matches found";
-		}//if-else
-?>
+            <a href="index.php">Home</a><br />
+			<a href="#">Periodi Storici</a><br />
+			<a href="news.php">News</a><br />
+			<a href="crediti.php">Chi siamo</a><br />
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 		<div class="modal-content">
 		  <div class="modal-header">
-		    <h5 class="modal-title">Manda e-mail</h5>
+		    <h5 class="modal-title">Contattaci</h5>
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
@@ -143,10 +132,10 @@
   <footer class="footer-copyright py-3 red">
     <div class="row">
 		<div class="col text-center"><img src="./img/Word-Art.png" alt="wordart" style="width: 200px;"></div>
-		<div class="col-6">
+		<div class="col-6 linku">
 			<h3>Links</h3><hr />
 			<a href="mappa.php" style="color: white;">Mappa del sito</a><br />
-			<a href="#" data-toggle="modal" data-target="#contactModal" style="color: white;">Contattateci</a><br />
+			<a href="#" data-toggle="modal" data-target="#contactModal" style="color: white;">Contattaci</a><br />
 			<a href="crediti.php" style="color: white;">Chi siamo</a>
 			<hr />@Arte dal '900 | 2019-2020
 		</div>
