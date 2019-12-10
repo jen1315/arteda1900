@@ -5,7 +5,7 @@ Sito per l'arte dal '900 ad adesso.
 Voglio usare questo file così che le cose postate possono essere prese in pagine oltre News.
 Ho comunque lasciato il mio vecchio codice con le sessioni come commento.
 
-Mandare e-mail non funziona se si usa solo XAMPP; il sito deve essere caricato online.
+Mandare e-mail non funziona se si usa solo XAMPP; il sito deve essere caricato online(la mail è mandata alla mia posta elettronica btw).
 
 Qualcuno deve completare la pagina 'crediti.php'.
 
