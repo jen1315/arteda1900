@@ -95,7 +95,7 @@
 				<p>Tra il 1880 e il 1914, tutto il mondo occidentale visse un periodo di progresso e benessere, agevolato anche dalla pace tra i popoli, che viene ricordato come la “Belle Époque”.
                 Ci fu un progresso in medicina e fu ridotta la mortalità infantile con il conseguente “boom” demografico; nelle tecnologie e vie di trasporto; 
 				nel commercio mondiale e nella produzione industriale, raddoppiata ed esaltata nelle Esposizioni universali; 
-				nella pace internazionale.  Questo fu, inoltre, il periodo del trionfo della borghesia, delle sue attitudini, del suo stile di vita e della sua importanza che si poteva rivelare attraverso il tipo di abitazione ( quartiere, dimensioni e piano degli appartamenti ), il numero dei domestici, l’abbigliamento e i rapporti sociali cioè con quale genere di persone avevano conoscenza e confidenza.</p>
+				nella pace internazionale.  Questo fu, inoltre, il periodo del trionfo della borghesia, delle sue attitudini, del suo stile di vita e della sua importanza che si poteva rivelare attraverso il tipo di abitazione, il numero dei domestici, l’abbigliamento e i rapporti sociali cioè con quale genere di persone avevano conoscenza e confidenza.</p>
 				<div class="card-columns">
 				    <form action="corrente.php" method="get">
 					<div class="card">
@@ -135,7 +135,7 @@
 				Nella Grande Guerra le linee di combattimento furono piuttosto statiche, di logoramento. 
 				La guerra ha comportato a uno stravolgimento della vita sociale: questa fu una guerra “totale” il cui ordine abolì qualsiasi concezione di sfera privata. 
 				Lo Stato si assunse il diritto di regolare l’intera vita sociale anche dal punto di vista economico. 
-				Tutta la popolazione fu inquadrata da una mobilitazione totale dall’alto. Lo Stato assunse un ruolo direttivo che non aveva mai avuto.</p>
+				Tutta la popolazione fu inquadrata da una mobilitazione totale dall’alto.</p>
 			    <div class="card-columns">
 				<form action="corrente.php" method="get">
 				    <div class="card">
@@ -157,11 +157,15 @@
 			</article>
 			<article id="2G" class="red">
 			    <h3>Seconda Guerra Mondiale</h3>
-				<p></p>
+				<p>È considerato il più grande conflitto armato della storia, costato all'umanità sei anni di sofferenze, distruzioni e massacri con un totale di morti che oscilla tra i 55 e i 60 milioni di individui. 
+				Le popolazioni civili si trovarono coinvolte nelle operazioni in una misura sino ad allora sconosciuta, e furono anzi bersaglio dichiarato di bombardamenti a tappeto, rappresaglie, stermini, persecuzioni e deportazioni. 
+				In particolare il Terzo Reich portò avanti con metodi ingegneristici l'Olocausto per annientare, tra gli altri, le popolazioni di origine o etnia ebraica e perseguì una politica di riorganizzazione etnico-politica dell'Europa centro-orientale che prevedeva la distruzione o deportazione di intere popolazioni slave, degli zingari e di tutti coloro che il regime nazista riteneva "indesiderabili" o nemici della razza ariana.</p>
 			</article>
 			<article id="mod">
 			    <h3>Periodo Moderno</h3>
-				<p></p>
+				<p>Durante la seconda metà del 20esimo secolo, la rivalità tra Stati Uniti e Unione Sovietica creò enormi tensioni in tutto il mondo che si manifestarono in vari conflitti armati e il pericolo onnipresente della proliferazione nucleare.
+				Questa rivalità porto tuttavia anche all'accellerazione dei progressi tecnologici e scientifici (Internet e Corsa allo spazio).
+				La dissoluzione dell'Unione Sovietica nel 1991 dopo il crollo della sua alleanza europea fu annunciata dall'Occidente come la fine del comunismo.</p>
 				<div class="card-columns">
 				    <form action="corrente.php" method="get">
 					<div class="card">
@@ -174,6 +178,25 @@
 					</form>
 				</div>
 			</article>
+			<article id="now" class="red">
+			    <h3>Periodo Contemporaneo</h3>
+				<p>I primi anni del XXI secolo furono segnati dall'ascesa dell'economia globale e dal consumismo del Terzo mondo, dalla sfiducia nei confronti del governo, dall'approfondimento delle preoccupazioni globali sul terrorismo e dall'aumento delle imprese private. 
+				Gli effetti del riscaldamento globale e l'innalzamento del livello del mare continuano. 
+				La primavera araba dei primi anni del 2010 ha portato a risultati contrastanti nel mondo arabo, provocando la caduta di numerose guerre civili e governi. Mentre la maggior parte degli Stati membri dell'Unione Europea ha introdotto una moneta comune, l'Euro, il Regno Unito ha votato in un referendum per lasciare l'Unione Europea: Brexit. 
+				La terza rivoluzione industriale iniziata intorno agli anni '80 continua anche nel presente.</p>
+				<div class="card-columns">
+				    <form action="corrente.php" method="get">
+					<div class="card">
+					    <img src="./img/arteconcetto.jpg" class="card-img-top" alt="Arte Concettuale" />
+						<div class="card-body">
+						    <h5 class="card-title">Arte Concettuale</h5>
+							<button type="submit" class="btn btn-primary" name="corrente" value="Arte Concettuale">Scopri...</button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</article>
+		</article>
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">
