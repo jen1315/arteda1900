@@ -37,7 +37,7 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="">
 		<img src="./img/Word-Art.png" alt="Logo" style="width: 50px;">
-		Arte nel '900
+		Arte dal '900
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
 			<a class="nav-link" href="news.php">Notizie</a>
 		</li>
 		<li class= "nav-item">
-			<a class="nav-link" href="crediti.html">Chi siamo</a>
+			<a class="nav-link" href="crediti.php">Chi siamo</a>
 		</li>
 		<form class="form-inline my-2 my-lg-0 center" action="cerca.php" method="get">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="cerca" required>
@@ -74,18 +74,30 @@
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
 			<div class="list-group">
-				<a href="#" class="list-group-item list-group-item-action">Espressionismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Cubismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Futurismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Astrattismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Dadaismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Surrealismo</a>
-				<a href="#" class="list-group-item list-group-item-action">La Pop Art</a>
-				<a href="#" class="list-group-item list-group-item-action">Arte Concettuale</a>
+				<form action="corrente.php" method="get">
+				<button type="submit" name="corrente" value="Espressionismo" class="list-group-item list-group-item-action">Espressionismo</button>
+				<button type="submit" name="corrente" value="Cubismo" class="list-group-item list-group-item-action">Cubismo</button>
+				<button type="submit" name="corrente" value="Futurismo" class="list-group-item list-group-item-action">Futurismo</button>
+				<button type="submit" name="corrente" value="Astrattismo" class="list-group-item list-group-item-action">Astrattismo</button>
+				<button type="submit" name="corrente" value="Dadaismo" class="list-group-item list-group-item-action">Dadaismo</button>
+				<button type="submit" name="corrente" value="Surrealismo" class="list-group-item list-group-item-action">Surrealismo</button>
+				<button type="submit" name="corrente" value="Pop Art" class="list-group-item list-group-item-action">La Pop Art</button>
+				<button type="submit" name="corrente" value="Arte Concettuale" class="list-group-item list-group-item-action">Arte Concettuale</button>
+				</form>
 			</div>
 		</article>
 		<article class="col-6">
-		esempio
+		    <p><h4>Chi siamo e perché?</h4>
+		    Prima di tutto, benvenuti nel nostro portale di news e curiosità sull'arte moderna(da 1900 a oggi).<br />
+			Nato come piccolo progetto per la raccolta di informazioni su notizie artistiche dal 1900 in poi,
+			miriamo a evolverci sempre di più per offrirvi la miglior esperienza possibile.<br />
+			Se volete contribuire, contattateci!
+		    </p>
+			<p><h4>Crediti</h4>
+			Back-End Developer e Designer: Cai Qiao Qiao<br />
+			Front-End Developer e Designer: Comito Alessio<br />
+			Project Manager: Polonio Leonardo<br /></p>
+			<img src="./img/Word-Art.png" alt="Il nostro logo" style="width: 50%;" />
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">

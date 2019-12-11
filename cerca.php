@@ -37,7 +37,7 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="">
 		<img src="./img/Word-Art.png" alt="Logo" style="width: 50px;">
-		Arte nel '900
+		Arte dal '900
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -87,18 +87,29 @@
 		<article class="col-6">
 <?php
         //restituisce i risultati della ricerca
-        $file = 'somefile.txt';
 		$searchfor = $_GET["cerca"];
-		$contents = file_get_contents($file);
+		$contentsN = file_get_contents('somefile.txt');
 		
-		$pattern = preg_quote($searchfor, '/');
-		$pattern = "/^.*$pattern.*\$/m";
-		if(preg_match_all($pattern, $contents, $matches)){
-		   echo "Found matches:\n";
-		   echo implode("\n", $matches[0]);
+		$patternN = preg_quote($searchfor, '/');
+		$patternN = "/^.*$patternN.*\$/m";
+		if(preg_match_all($patternN, $contentsN, $matchesN)){
+		   echo "Notizie trovate:\n";
+		   echo implode("\n", $matchesN[0]);
 		}//if
 		else{
-		   echo "No matches found";
+		   echo "Nessuna notizia trovata.<br />";
+		}//if-else
+		
+		$contentsC = file_get_contents('correnti.txt');
+		
+		$patternC = preg_quote($searchfor, '/');
+		$patternC = "/^.*$patternC.*\$/m";
+		if(preg_match_all($patternC, $contentsC, $matchesC)){
+		   echo "Informazioni trovate:\n";
+		   echo implode("\n", $matchesC[0]);
+		}//if
+		else{
+		   echo "Nessuna informazione trovata.";
 		}//if-else
 ?>
 		</article>

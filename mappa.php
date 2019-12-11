@@ -26,7 +26,7 @@
 			background-color: rgb(143, 26, 26);
 			color: white;
 		}
-		ul{padding:0; margin:0; list-style:none}
+		ul{list-style:none}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -38,7 +38,7 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="">
 		<img src="./img/Word-Art.png" alt="Logo" style="width: 50px;">
-		Arte nel '900
+		Arte dal '900
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -75,19 +75,28 @@
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
 			<div class="list-group">
-				<a href="#" class="list-group-item list-group-item-action">Espressionismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Cubismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Futurismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Astrattismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Dadaismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Surrealismo</a>
-				<a href="#" class="list-group-item list-group-item-action">La Pop Art</a>
-				<a href="#" class="list-group-item list-group-item-action">Arte Concettuale</a>
+				<form action="corrente.php" method="get">
+				<button type="submit" name="corrente" value="Espressionismo" class="list-group-item list-group-item-action">Espressionismo</button>
+				<button type="submit" name="corrente" value="Cubismo" class="list-group-item list-group-item-action">Cubismo</button>
+				<button type="submit" name="corrente" value="Futurismo" class="list-group-item list-group-item-action">Futurismo</button>
+				<button type="submit" name="corrente" value="Astrattismo" class="list-group-item list-group-item-action">Astrattismo</button>
+				<button type="submit" name="corrente" value="Dadaismo" class="list-group-item list-group-item-action">Dadaismo</button>
+				<button type="submit" name="corrente" value="Surrealismo" class="list-group-item list-group-item-action">Surrealismo</button>
+				<button type="submit" name="corrente" value="Pop Art" class="list-group-item list-group-item-action">La Pop Art</button>
+				<button type="submit" name="corrente" value="Arte Concettuale" class="list-group-item list-group-item-action">Arte Concettuale</button>
+				</form>
 			</div>
 		</article>
 		<article class="col-6">
             <a href="index.php">Home</a><br />
-			<a href="periodo.php">Periodi Storici</a><br />
+			<a href="periodo.php">Periodi Storici</a>
+			<ul>
+			    <li><a href="periodo.php">Inizio '900</a></li>
+				<li><a href="periodo.php#G1">La Prima Guerra Mondiale</a></li>
+				<li><a href="periodo.php#G2">La Seconda Guerra Mondiale</a></li>
+				<li><a href="periodo.php#mod">Moderno</a></li>
+				<li><a href="periodo.php#now">Contemporaneo</a></li>
+			</ul>
 			<a href="news.php">News</a><br />
 			<a href="crediti.php">Chi siamo</a><br />
 		</article>

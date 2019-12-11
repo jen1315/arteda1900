@@ -22,13 +22,14 @@
 			padding: 20px;
 			font-size: 18px;
 		}
+		img {
+			width: 100%;
+		}
 		.red {
 			background-color: rgb(143, 26, 26);
 			color: white;
 		}
-		.card {
-			color: black;
-		}
+		ul{padding:0; margin:0; list-style:none}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -53,11 +54,11 @@
 		<li class= "nav-item dropdown center">
 			<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Periodo</a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Inizio '900</a>
-                <a class="dropdown-item" href="#1G">1a Grande Guerra</a>
-                <a class="dropdown-item" href="#2G">2a Grande Guerra</a>
-                <a class="dropdown-item" href="#mod">Moderno</a>
-				<a class="dropdown-item" href="#now">Contemporaneo</a>
+                <a class="dropdown-item" href="periodo.php">Inizio '900</a>
+                <a class="dropdown-item" href="periodo.php#1G">1a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#2G">2a Grande Guerra</a>
+                <a class="dropdown-item" href="periodo.php#mod">Moderno</a>
+				<a class="dropdown-item" href="periodo.php#now">Contemporaneo</a>
             </div>
 		</li>
 		<li class= "nav-item">
@@ -77,7 +78,7 @@
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
 			<div class="list-group">
-				<form action="corrente.php" method="get">
+			    <form action="corrente.php" method="get">
 				<button type="submit" name="corrente" value="Espressionismo" class="list-group-item list-group-item-action">Espressionismo</button>
 				<button type="submit" name="corrente" value="Cubismo" class="list-group-item list-group-item-action">Cubismo</button>
 				<button type="submit" name="corrente" value="Futurismo" class="list-group-item list-group-item-action">Futurismo</button>
@@ -90,90 +91,18 @@
 			</div>
 		</article>
 		<article class="col-6">
-		    <article class="red">
-			    <h3>Inizio '900</h3>
-				<p>Tra il 1880 e il 1914, tutto il mondo occidentale visse un periodo di progresso e benessere, agevolato anche dalla pace tra i popoli, che viene ricordato come la “Belle Époque”.
-                Ci fu un progresso in medicina e fu ridotta la mortalità infantile con il conseguente “boom” demografico; nelle tecnologie e vie di trasporto; 
-				nel commercio mondiale e nella produzione industriale, raddoppiata ed esaltata nelle Esposizioni universali; 
-				nella pace internazionale.  Questo fu, inoltre, il periodo del trionfo della borghesia, delle sue attitudini, del suo stile di vita e della sua importanza che si poteva rivelare attraverso il tipo di abitazione ( quartiere, dimensioni e piano degli appartamenti ), il numero dei domestici, l’abbigliamento e i rapporti sociali cioè con quale genere di persone avevano conoscenza e confidenza.</p>
-				<div class="card-columns">
-				    <form action="corrente.php" method="get">
-					<div class="card">
-					    <img src="./img/espressionismo.jpg" class="card-img-top" alt="Espressionismo - " />
-						<div class="card-body">
-						    <h5 class="card-title">Espressionismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Espressionismo">Scopri...</button>
-						</div>
-					</div>
-					<div class="card">
-					    <img src="./img/cubismo.jpg" class="card-img-top" alt="Cubismo" />
-						<div class="card-body">
-						    <h5 class="card-title">Cubismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Cubismo">Scopri...</button>
-						</div>
-					</div>
-					<div class="card">
-					    <img src="./img/futurismo.jpg" class="card-img-top" alt="Futurismo" />
-						<div class="card-body">
-						    <h5 class="card-title">Futurismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Futurismo">Scopri...</button>
-						</div>
-					</div>
-					<div class="card">
-					    <img src="./img/kandisky.jpg" class="card-img-top" alt="Astrattismo" />
-						<div class="card-body">
-						    <h5 class="card-title">Astrattismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Astrattismo">Scopri...</button>
-						</div>
-					</div>
-					</form>
-				</div>
-			</article>
-            <article id="1G">
-			    <h3>La Prima Guerra Mondiale</h3>
-				<p>la Prima Guerra Mondiale, chiamata anche la Grande Guerra, fu una guerra molto diversa dalle precedenti: la natura stessa della guerra, il modo in cui fu combattuta diedero un valore decisivo di spartiacque della modernità. 
-				Nella Grande Guerra le linee di combattimento furono piuttosto statiche, di logoramento. 
-				La guerra ha comportato a uno stravolgimento della vita sociale: questa fu una guerra “totale” il cui ordine abolì qualsiasi concezione di sfera privata. 
-				Lo Stato si assunse il diritto di regolare l’intera vita sociale anche dal punto di vista economico. 
-				Tutta la popolazione fu inquadrata da una mobilitazione totale dall’alto. Lo Stato assunse un ruolo direttivo che non aveva mai avuto.</p>
-			    <div class="card-columns">
-				<form action="corrente.php" method="get">
-				    <div class="card">
-					    <img src="./img/dadaismo.jpg" class="card-img-top" alt="Dadaismo - " />
-						<div class="card-body">
-						    <h5 class="card-title">Dadaismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Dadaismo">Scopri...</button>
-						</div>
-					</div>
-					<div class="card">
-					    <img src="./img/surrealismo.jpg" class="card-img-top" alt="Surrealismo - " />
-						<div class="card-body">
-						    <h5 class="card-title">Surrealismo</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Surrealismo">Scopri...</button>
-						</div>
-					</div>
-				</form>
-				</div>
-			</article>
-			<article id="2G" class="red">
-			    <h3>Seconda Guerra Mondiale</h3>
-				<p></p>
-			</article>
-			<article id="mod">
-			    <h3>Periodo Moderno</h3>
-				<p></p>
-				<div class="card-columns">
-				    <form action="corrente.php" method="get">
-					<div class="card">
-					    <img src="./img/pop-art.jpg" class="card-img-top" alt="La Pop Art" />
-						<div class="card-body">
-						    <h5 class="card-title">La Pop Art</h5>
-							<button type="submit" class="btn btn-primary" name="corrente" value="Pop Art">Scopri...</button>
-						</div>
-					</div>
-					</form>
-				</div>
-			</article>
+<?php
+			$contents = file_get_contents('correnti.txt');
+			$pattern = preg_quote($_GET["corrente"], '/');
+			$pattern = "/^.*$pattern.*\$/m";
+			if(preg_match_all($pattern, $contents, $matches)){
+				echo implode("\n", $matches[0]);
+			}//if
+			else{
+				echo "No page found.";
+			}//if-else
+			unset($_COOKIE);
+?>
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">

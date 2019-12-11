@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,6 @@
 			background-color: rgb(143, 26, 26);
 			color: white;
 		}
-		ul{padding:0; margin:0; list-style:none}
 		hr {
 		    display: block; height: 1px;
             border: 0; border-top: 1px solid white;
@@ -38,7 +38,7 @@
 	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 	<a class="navbar-brand" href="">
 		<img src="./img/Word-Art.png" alt="Logo" style="width: 50px;">
-		Arte nel '900
+		Arte dal '900
 	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
@@ -80,24 +80,12 @@
 	  <div class="carousel-inner" style="height: 500px !important;">
 		<div class="carousel-item active">
 		  <img src="./img/moderna.jpg" class="d-block w-100" alt="arte moderna">
-		  <div class="carousel-caption d-none d-md-block">
-			<h5>Arte Moderna</h5>
-			<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-		  </div>
 		</div>
 		<div class="carousel-item">
 		  <img src="./img/futurismo.jpg" class="d-block w-100" alt="img2">
-		  <div class="carousel-caption d-none d-md-block">
-			<h5>Futurismo</h5>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-		  </div>
 		</div>
 		<div class="carousel-item">
 		  <img src="./img/kandisky.jpg" class="d-block w-100" alt="img3">
-		  <div class="carousel-caption d-none d-md-block">
-			<h5>Kandisky</h5>
-			<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-		  </div>
 		</div>
 	  </div>
 	  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -113,24 +101,37 @@
 		<article class="col col-lg-2">
 			<h3><b>Categorie</b></h3>
 			<div class="list-group">
-				<a href="#" class="list-group-item list-group-item-action">Espressionismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Cubismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Futurismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Astrattismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Dadaismo</a>
-				<a href="#" class="list-group-item list-group-item-action">Surrealismo</a>
-				<a href="#" class="list-group-item list-group-item-action">La Pop Art</a>
-				<a href="#" class="list-group-item list-group-item-action">Arte Concettuale</a>
+				<form action="corrente.php" method="get">
+				<button type="submit" name="corrente" value="Espressionismo" class="list-group-item list-group-item-action">Espressionismo</button>
+				<button type="submit" name="corrente" value="Cubismo" class="list-group-item list-group-item-action">Cubismo</button>
+				<button type="submit" name="corrente" value="Futurismo" class="list-group-item list-group-item-action">Futurismo</button>
+				<button type="submit" name="corrente" value="Astrattismo" class="list-group-item list-group-item-action">Astrattismo</button>
+				<button type="submit" name="corrente" value="Dadaismo" class="list-group-item list-group-item-action">Dadaismo</button>
+				<button type="submit" name="corrente" value="Surrealismo" class="list-group-item list-group-item-action">Surrealismo</button>
+				<button type="submit" name="corrente" value="Pop Art" class="list-group-item list-group-item-action">La Pop Art</button>
+				<button type="submit" name="corrente" value="Arte Concettuale" class="list-group-item list-group-item-action">Arte Concettuale</button>
+				</form>
 			</div>
 		</article>
 		<article class="col-6">
-          <h2>Ultime notizie</h2>
+		    <h2>Corrente del giorno</h2>
+<?php
+            //corrente del giorno randomica salvato in cookie
+			if(!isset($_COOKIE['dailycorr'])) {
+				$lines = file("correnti.txt");
+				$randL = $lines[array_rand($lines)];
+				setcookie('dailycorr', $randL, time()+86400);
+				echo $randL;
+			}else {
+				echo $_COOKIE["dailycorr"];
+			}//if-else
+?>
+            <h2>Ultime notizie</h2>
 <?php
 			//ultima notizia inserita
-			$out = file("somefile.txt");
-			echo array_pop($out);
+			$news = file("somefile.txt");
+			echo array_pop($news);
 ?>
-            </ul>
 		</article>
 	</div>
 	<div class="modal" id="contactModal" tabindex="-1" role="dialog">
