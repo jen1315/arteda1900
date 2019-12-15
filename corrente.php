@@ -22,9 +22,6 @@
 			padding: 20px;
 			font-size: 18px;
 		}
-		img {
-			width: 100%;
-		}
 		.red {
 			background-color: rgb(143, 26, 26);
 			color: white;
